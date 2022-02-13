@@ -1,6 +1,6 @@
 <template>
   <div>
-    <NuxtLink to="/">GO TO HOME </NuxtLink>
+    <NuxtLink to="/">GO TO HOME asd </NuxtLink>
     <div v-if="post">POST{{ post }}</div>
   </div>
 </template>
