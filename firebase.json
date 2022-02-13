@@ -3,11 +3,10 @@
     "source": ".output/server"
   },
   "hosting": {
-    "public": ".output",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ]
+    "site": "jobportfolio-blog",
+    "public": ".output/public",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "cleanUrls": true,
+    "rewrites": [{ "source": "**", "function": "server" }]
   }
 }
