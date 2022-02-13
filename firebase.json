@@ -3,7 +3,7 @@
     "source": ".output/server"
   },
   "hosting": {
-    "public": ".output/server",
+    "public": ".output",
     "ignore": [
       "firebase.json",
       "**/.*",
