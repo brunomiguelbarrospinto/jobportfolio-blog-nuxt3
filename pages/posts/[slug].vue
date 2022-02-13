@@ -1,21 +1,15 @@
 <template>
   <div>
     <NuxtLink to="/">GO TO HOME </NuxtLink>
-    <div>POST{{ post }}</div>
-    {{ pending }}
+    <div v-if="post">POST{{ post }}</div>
   </div>
 </template>
 
 <script setup lang="ts">
 const route = useRoute();
 
-const { fetchPost } = usePost();
-
-const { data, pending } = await useAsyncData("fetchPost", () =>
-  fetchPost({ slug: route.params.slug })
-);
-
-const post = useState("post", () => data.value);
+const { fetchPost, post } = usePost();
+await fetchPost({ slug: route.params.slug });
 
 useMeta({
   title: post.value.title,

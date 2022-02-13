@@ -2,7 +2,7 @@
   <div>
     <NuxtLink to="/">GO TO HOME </NuxtLink>
     POSTS
-    <div :key="post" v-for="post in posts">
+    <div :key="post.title" v-for="post in posts">
       {{ post }} <NuxtLink :to="`/posts/${post.slug}`">Go</NuxtLink>
     </div>
   </div>
@@ -10,5 +10,7 @@
 
 <script setup lang="ts">
 const { fetchPosts, posts } = usePosts();
-await fetchPosts();
+if (!posts.value) {
+  await fetchPosts();
+}
 </script>

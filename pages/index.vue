@@ -1,8 +1,23 @@
 <template>
   <div>
     <NuxtLink to="/posts">GO TO POSTS </NuxtLink>
+    {{ post }}
   </div>
 </template>
+
+<script setup lang="ts">
+const { post } = usePost();
+
+useMeta({
+  title: "Home",
+  meta: [
+    {
+      name: "description",
+      content: "Home",
+    },
+  ],
+});
+</script>
 
 <style>
 .dark {

@@ -10,7 +10,10 @@ const client = sanityClient({
 });
 
 function useSanity() {
-  return { client };
+  async function fetchData<T>(key: string, query: string) {
+    return useAsyncData(key, async () => await client.fetch<T>(query));
+  }
+  return { fetchData };
 }
 
 export default useSanity;

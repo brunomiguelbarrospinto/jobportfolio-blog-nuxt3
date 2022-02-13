@@ -2,10 +2,10 @@ import PostDTO from "./PostDTO";
 
 class PostModel {
   title: string;
-  firstLetter: string;
+  slug: string;
   constructor(post: PostDTO) {
     this.title = post.title;
-    this.firstLetter = post.title[0];
+    this.slug = post.slug;
   }
   toJSON() {
     return { ...this };
