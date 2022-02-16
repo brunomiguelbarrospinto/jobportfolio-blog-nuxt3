@@ -1,6 +1,6 @@
 {
   "functions": {
-    "source": "node .output/server/index.mjs"
+    "source": ".output/server"
   },
   "hosting": {
     "site": "jobportfolio-blog",

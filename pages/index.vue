@@ -1,6 +1,6 @@
 <template>
   <div>
-    <NuxtLink to="/posts">GO TO POSTS </NuxtLink>
+    <NuxtLink to="/posts">GO TO POSTS asdasd </NuxtLink>
     {{ post }}
   </div>
 </template>
