@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "dev": "nuxi dev",
-    "build": "npx cross-env NITRO_PRESET=firebase nuxi build && npx firebase deploy",
+    "build": "npx cross-env NITRO_PRESET=firebase nuxi build",
     "start": "node .output/server/index.mjs"
   },
   "devDependencies": {
