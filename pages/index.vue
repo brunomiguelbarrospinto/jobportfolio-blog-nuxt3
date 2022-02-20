@@ -1,19 +1,37 @@
 <template>
-  <div>
-    <NuxtLink to="/posts">GO TO POSTS TEST Change </NuxtLink>
-    {{ post }}
+  <IndexBanner />
+  <div class="container mx-auto">
+    <div class="flex">
+      <div class="w-2/3">
+        <pre> {{ posts }}</pre>
+      </div>
+
+      <div class="w-1/3">
+        Other things
+        <hr />
+        Other things
+        <hr />
+        Other things
+        <hr />
+        Other things
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-const { post } = usePost();
+import "@/assets/css/main.css";
 
+const { fetchPosts, posts } = usePosts();
+if (!posts.value) {
+  await fetchPosts();
+}
 useMeta({
-  title: "Home",
+  title: "Jobportfolio - Blog",
   meta: [
     {
       name: "description",
-      content: "Home",
+      content: "Jobportfolio - Blog",
     },
   ],
 });
