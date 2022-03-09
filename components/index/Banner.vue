@@ -1,6 +1,6 @@
 <template>
-  <div class="c py-20 bg-white">
-    <div class="ontainer mx-auto max-w-screen-xl">
+  <div class="py-20 bg-white">
+    <div class="container mx-auto max-w-screen-xl">
       <div class="grid grid-cols-2 gap-20">
         <div class="grid place-content-center">
           <h1 class="text-5xl font-extrabold leading-normal text-gray-800 mb-6">
