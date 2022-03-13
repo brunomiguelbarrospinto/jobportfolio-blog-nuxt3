@@ -2,60 +2,26 @@
   <div>
     <IndexBanner />
     <div class="container mx-auto max-w-screen-xl">
-      <div class="grid grid-cols-2 gap-5">
-        <div>
+      <div class="grid grid-cols-3 gap-14">
+        <div class="mt-10 col-span-2" v-if="posts">
           <div
-            :key="post.slug"
-            v-for="post in posts"
-            class="w-full bg-white flex p-4 rounded-md shadow hover:shadow-lg transition-shadow mt-10"
+            class="text-2xl font-extrabold leading-normal text-gray-800 mb-6"
           >
-            <div class="aspect-square w-56 mr-4">
-              <img :src="post.mainImage" class="object-cover w-full h-full" />
-            </div>
-            <div>
-              <div class="mb-5">
-                <router-link
-                  :key="post.slug + category.title"
-                  v-for="category in post.categories"
-                  :style="`background:${category.color}`"
-                  :to="`/category/${category.slug}`"
-                  class="px-3 py-2 rounded text-xs text-white mr-2 font-bold hover:underline"
-                >
-                  {{ category.title }}
-                </router-link>
-              </div>
-
-              <router-link
-                :to="`/posts/${post.slug}`"
-                class="text-xl font-bold text-gray-700 hover:underline"
-              >
-                {{ post.title }}
-              </router-link>
-              <div class="flex items-center mt-4">
-                <div class="w-14">
-                  <img :src="post.author.image" class="rounded-full mx-auto" />
-                </div>
-                <div class="ml-4">
-                  <div class="mb-1 font-semibold text-gray-600">
-                    {{ post.author.name }}
-                  </div>
-                  <div class="text-gray-500 font-medium text-sm">
-                    {{ post.publishedAt }}
-                  </div>
-                </div>
-              </div>
-            </div>
+            Ultimos posts
           </div>
+          <PostsPostCard :post="post" :key="post.slug" v-for="post in posts" />
         </div>
-
-        <div>
-          Other things
-          <hr />
-          Other things
-          <hr />
-          Other things
-          <hr />
-          Other things
+        <div class="mt-10">
+          <div
+            class="text-2xl font-extrabold leading-normal text-gray-800 mb-6"
+          >
+            Categorias
+          </div>
+          <div
+            class="w-full bg-white p-4 rounded-md shadow hover:shadow-lg transition-shadow"
+          >
+            <CategoriesList />
+          </div>
         </div>
       </div>
     </div>

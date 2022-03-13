@@ -1,4 +1,3 @@
-// import useSanity from "./useSanity";
 import PostDTO from "@/definitions/PostDTO";
 import PostModel from "@/definitions/PostModel";
 
